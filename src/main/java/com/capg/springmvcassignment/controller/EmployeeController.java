@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,7 +20,7 @@ public class EmployeeController {
 	
 
 	@GetMapping("/searchEmp")
-	public String searchEmployee(@RequestParam(name = "empId") int empIdVal, ModelMap modelMap) {
+	public String searchEmployee(@RequestParam(name = "id") int empIdVal, ModelMap modelMap) {
 		EmployeeInfoBean bean = employeeService.getEmployeeByid(empIdVal);
 		if (bean != null) {
 			modelMap.addAttribute("empInfo", bean);
@@ -60,16 +61,16 @@ public class EmployeeController {
 
 
 	@GetMapping("/deleteEmp")
-	public String deleteEmployee(int empId ,ModelMap modelMap) {
+	public String deleteEmployee(int id ,ModelMap modelMap) {
 			
-		boolean updated=employeeService.deleteEmployee(empId);
+		boolean updated=employeeService.deleteEmployee(id);
 		if(updated) {
 			modelMap.addAttribute("msg", "EmployeeDetails deleted");
 		}
 		else {
 			modelMap.addAttribute("errMsg", "EmployeeDetails not deleted");
 		}
-		return "updateEmployee";
+		return "deleteEmployee";
 	
 	}
 
@@ -89,5 +90,22 @@ public class EmployeeController {
 		return "allEmployeeDetails";
 	
 	}
+	
+	@GetMapping("/pathVar/{city}")
+	public String getPathVariable(@PathVariable(name = "city") String cityName, ModelMap modelMap) {
+		modelMap.addAttribute("cityName", cityName);
+		return "pathVariable";
+	}
+
+	@GetMapping("/redirect")
+	public String redirectReq() {
+		return "redirect:http://www.youtube.com";
+	}
+
+	@GetMapping("/forward")
+	public String forwardReq() {
+		return "forward:/searchEmployeeForm";
+	}
+	
 
 }

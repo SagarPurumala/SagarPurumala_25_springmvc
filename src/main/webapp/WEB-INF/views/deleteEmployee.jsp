@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
    <% String msg=(String) request.getAttribute("msg");
     String errMsg=(String) request.getAttribute("errMsg");%>
+    <jsp:include page="header.jsp" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
 <form action="./deleteEmp" method="get">
-Employee Id to be deleted: <input type="number" name="empId"><br>
+Employee Id to be deleted: <input type="number" name="id"><br>
 <input type="submit">
 
 </form>

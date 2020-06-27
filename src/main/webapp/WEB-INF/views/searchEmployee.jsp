@@ -5,6 +5,7 @@
     <% EmployeeInfoBean bean=(EmployeeInfoBean) request.getAttribute("empInfo");
     String errMsg=(String) request.getAttribute("errMsg");
     %>
+    <jsp:include page="header.jsp" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 </head>
 <body>
 <form action="./searchEmp" method="get">
-Employee Id: <input type="number" name="empId"><br>
+Employee Id: <input type="number" name="id"><br>
 <input type="submit">
 
 </form>

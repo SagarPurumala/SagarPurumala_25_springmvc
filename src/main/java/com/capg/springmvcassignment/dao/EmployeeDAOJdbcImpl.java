@@ -26,9 +26,9 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				employeeInfoBean = new EmployeeInfoBean();
-				employeeInfoBean.setId(rs.getInt("empId"));
+				employeeInfoBean.setId(rs.getInt("id"));
 				employeeInfoBean.setAge(rs.getInt("age"));
-				employeeInfoBean.setName(rs.getString("empName"));
+				employeeInfoBean.setName(rs.getString("name"));
 				employeeInfoBean.setMobilenumber(Long.parseLong(rs.getString("mobilenumber")));
 				employeeInfoBean.setPassword(rs.getString("password"));
 				employeeInfoBean.setEmailId("emailId");
@@ -155,10 +155,10 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO {
 				EmployeeInfoBean bean2 = new EmployeeInfoBean();
 
 				
-				 bean2.setId(rs.getInt("empId"));
+				 bean2.setId(rs.getInt("id"));
 				 bean2.setAge(rs.getInt("age"));
-				 bean2.setName(rs.getString("empName"));
-				 bean2.setMobilenumber(Long.parseLong(rs.getString("designation")));
+				 bean2.setName(rs.getString("name"));
+				 bean2.setMobilenumber(Long.parseLong(rs.getString("mobilenumber")));
 				 bean2.setPassword(rs.getString("password"));
 				 bean2.setEmailId("emailId");
 

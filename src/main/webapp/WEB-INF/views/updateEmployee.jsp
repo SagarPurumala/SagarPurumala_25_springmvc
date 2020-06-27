@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <% String msg=(String) request.getAttribute("msg");
     String errMsg=(String) request.getAttribute("errMsg");%>
+    <jsp:include page="header.jsp" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +11,8 @@
 </head>
 <body>
 <form action="./updateEmp" method="get">
-Enter Employee ID to change name<input type="number" name="empId"><br>
-Enter Employee New NAme<input type="text" name="empName">
+Enter Employee ID to change name<input type="number" name="id"><br>
+Enter Employee New NAme<input type="text" name="name">
 <input type="submit" name="submit">
 </form>
 <%if(msg !=null ){ %>

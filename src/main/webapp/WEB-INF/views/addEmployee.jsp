@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <% String msg=(String) request.getAttribute("msg");
     String errMsg=(String) request.getAttribute("errMsg"); %>
+    <jsp:include page="header.jsp" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +11,8 @@
 </head>
 <body>
 <form action="./addEmp" method="get">
-   Employee Id:<input type="number" name="empId">
-	Employee Name:<input type="text" name="empName">
+   Employee Id:<input type="number" name="id">
+	Employee Name:<input type="text" name="name">
 	Employee Age:<input type="text" name="age">
 	Employee Email:<input type="text" name="emailId">
 	Employee Mobile Number:<input type="text" name="mobilenumber">
