@@ -17,6 +17,11 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
+	@GetMapping("/searchEmployeeForm")
+	public String dispalySearchEmployeeForm() {
+
+		return "searchEmployee";
+	}
 	
 
 	@GetMapping("/searchEmp")
@@ -31,7 +36,11 @@ public class EmployeeController {
 		return "searchEmployee";
 	}
 
+	@GetMapping("addEmployeeForm")
+	public String displayAddEmployee() {
 
+		return "addEmployee";
+	}
 	@PostMapping("/addEmp")
 	public String addEmployee(EmployeeInfoBean bean, ModelMap modelMap) {
 
@@ -45,7 +54,11 @@ public class EmployeeController {
 		}
 		return "addEmployee";
 	}
+	@GetMapping("/updateEmployeeForm")
+	public String dispalyUpadteEmployee() {
 
+		return "updateEmployee";
+	}
 
 	@GetMapping("/updateEmp")
 	public String updateEmployee(EmployeeInfoBean bean, ModelMap modelMap) {
@@ -59,6 +72,11 @@ public class EmployeeController {
 		return "updateEmployee";
 	}
 
+	@GetMapping("/deleteEmployeeForm")
+	public String dispalyDeleteEmployee() {
+
+		return "deleteEmployee";
+	}
 
 	@GetMapping("/deleteEmp")
 	public String deleteEmployee(int id ,ModelMap modelMap) {
@@ -74,7 +92,11 @@ public class EmployeeController {
 	
 	}
 
+	@GetMapping("/getAllEmployees")
+	public String dispalyAllEmployee() {
 
+		return "allEmployeeDetails";
+	}
 
 	@GetMapping("/allEmp")
 	public String allEmployee(EmployeeInfoBean bean,ModelMap modelMap) {

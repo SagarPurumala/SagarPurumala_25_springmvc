@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="./addEmp" method="get">
+<form action="./addEmp" method="post">
    Employee Id:<input type="number" name="id">
 	Employee Name:<input type="text" name="name">
 	Employee Age:<input type="text" name="age">
